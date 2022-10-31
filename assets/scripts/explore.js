@@ -36,7 +36,9 @@ function init() {
       }
     }
     synth.speak(utterThis);
-    if (synth.speaking) img.src = "assets/images/smiling-open.png";
+    utterThis.onstart = function() {
+      img.src = "assets/images/smiling-open.png";
+    }
     utterThis.onend = function() {
       img.src = "assets/images/smiling.png";
     }
